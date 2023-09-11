@@ -4,40 +4,24 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 
-'''Uncomment the below line when running in linux'''
-# from pyvirtualdisplay import Display
 import time, os
 
 class Twitterbot:
 
 	def __init__(self, email, password):
 
-		"""Constructor
-
-		Arguments:
-			email {string} -- registered twitter email
-			password {string} -- password for the twitter account
-		"""
-
-		self.email = 'ja_pode_almosar'
+		self.email = email
 		self.password = password
 		# initializing chrome options
+		# can be done with firefox
 		chrome_options = Options()
-
-		# adding the path to the chrome driver and
-		# integrating chrome_options with the bot
+		
 		self.bot = webdriver.Chrome()
 
 	def login(self):
-		"""
-			Method for signing in the user
-			with the provided email and password.
-		"""
-
 		bot = self.bot
-		# fetches the login page
 		bot.get('https://twitter.com/login')
-		# adjust the sleep time according to your internet speed
+		# sleep times can be adjusted according to internet speed
 		time.sleep(3)
 
 		email = bot.find_element(By.TAG_NAME,
