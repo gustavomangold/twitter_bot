@@ -1,5 +1,5 @@
 import twitterbot as tb
-import secrets, sys
+import sys
 
 # the command must be called with python3 main_script.py 'tweet_to_be_posted'
 # the argument is the tweet
